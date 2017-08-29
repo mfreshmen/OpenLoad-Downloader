@@ -18,6 +18,8 @@ if($video == ''){
 	}
 
 	$request = $client->getMessageFactory()->createRequest("https://oload.tv/embed/$video", 'GET');
+	$request->addHeader('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.2 Safari/534.34');
+	
 	$response = $client->getMessageFactory()->createResponse();
 	$client->send($request, $response);
 
