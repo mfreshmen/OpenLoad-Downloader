@@ -13,7 +13,7 @@ if($video == ''){
 		$video = explode('.', $video)[0];
 	}
 
-	$request = $client->getMessageFactory()->createRequest("https://openload.co/embed/$video", 'GET');
+	$request = $client->getMessageFactory()->createRequest("https://oload.tv/embed/$video", 'GET');
 	$response = $client->getMessageFactory()->createResponse();
 	$client->send($request, $response);
 
@@ -24,7 +24,7 @@ if($video == ''){
 			exit();
 		}
 	    	$openload = explode('<span id="streamurl">', $openload)[1];
-	    	$file = 'https://openload.co/stream/'.explode('</span>', $openload)[0].'?mime=true';
+	    	$file = 'https://oload.tv/stream/'.explode('</span>', $openload)[0];
     		$headers = get_headers($file,1);
     		
     		//Final Args
