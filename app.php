@@ -25,6 +25,9 @@ if($video == ''){
 
 	if($response->getStatus() === 200) {
 		$openload = $response->getContent();
+		echo '<pre>';
+		echo $openload;
+		/*
 		if(strpos($openload, 'We are sorry!') !== False){
 			echo json_encode(array('error' => '404', 'msg' => 'File not found'));
 			exit();
@@ -48,7 +51,8 @@ if($video == ''){
 		 	echo fread($f, 8*1024);
 		   	flush();
 		   	ob_flush();
-	   	}
+	   	}*/
+		echo '</pre>';
 	   	exit();
 	}else{
 		echo json_encode(array('error' => $response->getStatus(), 'msg' => 'Server error'));
