@@ -17,7 +17,7 @@ if($video == ''){
 		$video = explode('.', $video)[0];
 	}
 
-	$request = $client->getMessageFactory()->createRequest("https://oload.tv/embed/$video", 'GET');
+	$request = $client->getMessageFactory()->createRequest('GET', "https://oload.tv/embed/$video");
 	$request->addHeader('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36');
 	
 	$response = $client->getMessageFactory()->createResponse();
